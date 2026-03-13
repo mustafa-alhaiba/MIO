@@ -2276,7 +2276,7 @@
             "method": "GET",
             "header": [],
             "url": {
-              "raw": "{{url}}/api/audit/",
+              "raw": "{{url}}/api/audit/?contract_id=ec5ac757-2a08-497f-85d5-1e998eda1ee3&user_id=3&action=SOFT_DELETE",
               "host": [
                 "{{url}}"
               ],
@@ -2284,6 +2284,20 @@
                 "api",
                 "audit",
                 ""
+              ],
+              "query": [
+                {
+                  "key": "contract_id",
+                  "value": "ec5ac757-2a08-497f-85d5-1e998eda1ee3"
+                },
+                {
+                  "key": "user_id",
+                  "value": "3"
+                },
+                {
+                  "key": "action",
+                  "value": "SOFT_DELETE"
+                }
               ]
             }
           },
@@ -2425,6 +2439,89 @@
               ],
               "cookie": [],
               "body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 14,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"SOFT_DELETE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation Updated Audit\",\n            \"timestamp\": \"2026-03-13T19:22:53.920064Z\",\n            \"extra_data\": {\n                \"deleted_at\": \"2026-03-13 19:22:53.916962+00:00\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"UPDATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation Updated Audit\",\n            \"timestamp\": \"2026-03-13T19:22:48.000649Z\",\n            \"extra_data\": {\n                \"changed_fields\": {\n                    \"title\": {\n                        \"to\": \"Contract Creation Updated Audit\",\n                        \"from\": \"Contract Creation\"\n                    },\n                    \"status\": {\n                        \"to\": \"DRAFT\",\n                        \"from\": \"ACTIVE\"\n                    },\n                    \"deadline\": {\n                        \"to\": \"2026-03-19\",\n                        \"from\": \"2026-03-13\"\n                    },\n                    \"description\": {\n                        \"to\": \"Contract Creation Updated Audit\",\n                        \"from\": \"Contract Creation\"\n                    },\n                    \"arabic_title\": {\n                        \"to\": \"إنشاء عقد تعديل اشارة\",\n                        \"from\": \"إنشاء عقد\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": 12,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"UPDATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation\",\n            \"timestamp\": \"2026-03-13T19:22:40.071322Z\",\n            \"extra_data\": {\n                \"changed_fields\": {\n                    \"document\": {\n                        \"to\": \"contracts/ec5ac757-2a08-497f-85d5-1e998eda1ee3/documents/dd8b1ebe64394226ba2dd445ed0ae2ab.pdf\",\n                        \"from\": \"\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": 11,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"CREATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation\",\n            \"timestamp\": \"2026-03-13T19:22:28.602836Z\",\n            \"extra_data\": {\n                \"status\": \"ACTIVE\",\n                \"deadline\": \"2026-03-13\"\n            }\n        }\n    ]\n}"
+            },
+            {
+              "name": "Filtering success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/audit/?contract_id=ec5ac757-2a08-497f-85d5-1e998eda1ee3&user_id=3&action=SOFT_DELETE",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "audit",
+                    ""
+                  ],
+                  "query": [
+                    {
+                      "key": "contract_id",
+                      "value": "ec5ac757-2a08-497f-85d5-1e998eda1ee3"
+                    },
+                    {
+                      "key": "user_id",
+                      "value": "3"
+                    },
+                    {
+                      "key": "action",
+                      "value": "SOFT_DELETE"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 19:46:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "336"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 14,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"SOFT_DELETE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation Updated Audit\",\n            \"timestamp\": \"2026-03-13T19:22:53.920064Z\",\n            \"extra_data\": {\n                \"deleted_at\": \"2026-03-13 19:22:53.916962+00:00\"\n            }\n        }\n    ]\n}"
             }
           ]
         }
