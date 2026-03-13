@@ -1,0 +1,55 @@
+version: '3.8'
+
+x-app-base: &app-base
+  build: .
+  image: legalcore-app:latest
+  env_file:
+    - .env
+  volumes:
+    - .:/app
+    - media_data:/app/media
+  depends_on:
+    db:
+      condition: service_healthy
+    redis:
+      condition: service_started
+
+services:
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_NAME}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+  web:
+    <<: *app-base
+    command: gunicorn config.wsgi:application --bind 0.0.0.0:8000 --workers 3 --log-level info
+    ports:
+      - "8000:8000"
+
+  celery_worker:
+    <<: *app-base
+    command: celery -A config worker -l INFO
+
+  celery_beat:
+    <<: *app-base
+    command: celery -A config beat -l INFO
+
+volumes:
+  postgres_data:
+  media_data:

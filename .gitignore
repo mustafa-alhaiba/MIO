@@ -1,0 +1,5 @@
+*venv
+*.env
+*celerybeat-schedule
+*staticfiles
+*gunicorn.ctl
