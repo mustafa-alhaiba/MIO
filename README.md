@@ -32,3 +32,9 @@ Section 2 :
     Task 1 : 
         1- Architectural Decision: Custom User Model
         I opted to use `AbstractBaseUser` rather than `AbstractUser`. Modern APIs and legal tech platforms universally use email addresses for authentication. `AbstractUser` forces the inclusion of a `username` field, which requires awkward workarounds to remove or bypass. `AbstractBaseUser` provides a clean, secure slate, allowing `email` to be the true `USERNAME_FIELD` while keeping the database schema lean.
+    Task 2:
+        1- Architectural Decision: Shared Utilities with Common App
+        To keep our codebase clean and maintainable, we introduced a dedicated `common` app for shared utilities that can be reused across different parts of the project. This includes custom permissions, exception handlers, and file validators that go beyond simple extension checks—ensuring files are not only the right type but also meet size limits, content integrity, and security standards to protect against malicious uploads.
+
+        2- Architectural Decision: Service Layer for Business Logic Separation
+        We implemented a service layer pattern to cleanly separate business logic from our views and serializers. This keeps our views thin and focused on request/response handling, while complex operations like contract creation, status transitions, and file attachments are encapsulated in dedicated service classes. This approach improves testability, reusability, and makes the codebase easier to maintain as the application grows.
