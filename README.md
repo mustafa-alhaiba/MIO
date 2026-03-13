@@ -24,3 +24,7 @@ Section 1 :
 
     To stop the application, just press Ctrl+C in your terminal. To completely tear it down and clear the containers,
         run `docker-compose down`.    
+    
+
+    hint : to add new app to the project create folder with the <app_name> ,then in Docker Application or Termminal run python manage.py startapp <app_name> apps/<app_name> , change the apps.py to add the name as : "apps.<app_name>"
+

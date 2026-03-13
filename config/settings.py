@@ -51,6 +51,9 @@ APPS = [
     "apps.notifications",
     "apps.audit"
 ]
+
+INSTALLED_APPS += APPS
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
