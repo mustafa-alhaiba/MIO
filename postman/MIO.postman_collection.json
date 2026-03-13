@@ -1,0 +1,2448 @@
+{
+  "info": {
+    "_postman_id": "aacad2fb-64b0-4084-9928-cdb7af9c6c5c",
+    "name": "MIO",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "50724336",
+    "_collection_link": "https://go.postman.co/collection/50724336-aacad2fb-64b0-4084-9928-cdb7af9c6c5c?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Accounts",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"user@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/register/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "register",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Error Validate passowrd",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"123456\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/register/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 15:54:50 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "151"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"password\": [\n        \"This password is too short. It must contain at least 8 characters.\",\n        \"This password is too common.\",\n        \"This password is entirely numeric.\"\n    ]\n}"
+            },
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"user@123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/register/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "register",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 15:55:26 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "78"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"email\": \"user.test@email.com\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"role\": \"CLIENT\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"user@123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/login/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "login",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"user@123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/login/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:03:32 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "505"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MzUwNDIxMiwiaWF0IjoxNzczNDE3ODEyLCJqdGkiOiIyZmFiYmMxZTMzZmM0NTI1ODgwNzI3NWYwYTc1MDdiMSIsInVzZXJfaWQiOiIxIn0.1nWnjts3X7GfqZXG2ITHo37i2NeDdLY6baktRI4CqX8\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczNDE4MTEyLCJpYXQiOjE3NzM0MTc4MTIsImp0aSI6IjVjYzQ4Yjg0NTBhNDQ3ZDE5MzQzZjZmZWVjZDRiNzcxIiwidXNlcl9pZCI6IjEifQ.nUBvR7XBJX4dFiLioc50C4nRZDgL6qx4vTVfdEwScD0\",\n    \"role\": \"CLIENT\"\n}"
+            },
+            {
+              "name": "Error in handling",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\":\"user.test@email.com\",\r\n    \"password\":\"user@13\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/login/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "login",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:07:41 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "126"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"AuthenticationFailed\",\n    \"errors\": {\n        \"detail\": \"No active account found with the given credentials\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Refresh Token",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MzUwNDUzNywiaWF0IjoxNzczNDE4MTM3LCJqdGkiOiI4ODRjN2Q1ZWFiOGY0MmExODYxYjYwZGE4MTUyYTE1MCIsInVzZXJfaWQiOiIxIn0.wZq0m5xj-1Q0H0azEJbSxYCAPXIuMmXfV2AvScnC3-c\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/token/refresh/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "token",
+                "refresh",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MzUwNDUzNywiaWF0IjoxNzczNDE4MTM3LCJqdGkiOiI4ODRjN2Q1ZWFiOGY0MmExODYxYjYwZGE4MTUyYTE1MCIsInVzZXJfaWQiOiIxIn0.wZq0m5xj-1Q0H0azEJbSxYCAPXIuMmXfV2AvScnC3-c\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/token/refresh/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "token",
+                    "refresh",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:09:09 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "244"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczNDE4NDQ5LCJpYXQiOjE3NzM0MTgxNDksImp0aSI6IjE2MjJiODI2YmRiYTQ1ODQ4NTNmYTZhYjVjMzA0Mjk3IiwidXNlcl9pZCI6IjEifQ.2YpXurzq-ztfV6s4TMMpb4VOvZEQYvukAxALQQWu-YY\"\n}"
+            },
+            {
+              "name": "Invalid",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MT3MzUwNDUzNywiaWF0IjoxNzczNDE4MTM3LCJqdGkiOiI4ODRjN2Q1ZWFiOGY0MmExODYxYjYwZGE4MTUyYTE1MCIsInVzZXJfaWQiOiIxIn0.wZq0m5xj-1Q0H0azEJbSxYCAPXIuMmXfV2AvScnC3-c\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/token/refresh/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "token",
+                    "refresh",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:09:24 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "109"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"InvalidToken\",\n    \"errors\": {\n        \"detail\": \"Token is invalid\",\n        \"code\": \"token_not_valid\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MT3MzUwNDUzNywiaWF0IjoxNzczNDE4MTM3LCJqdGkiOiI4ODRjN2Q1ZWFiOGY0MmExODYxYjYwZGE4MTUyYTE1MCIsInVzZXJfaWQiOiIxIn0.wZq0m5xj-1Q0H0azEJbSxYCAPXIuMmXfV2AvScnC3-c\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/logout/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "logout",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MzUwNTIzMSwiaWF0IjoxNzczNDE4ODMxLCJqdGkiOiI2YjQwYmM2NTNlY2Y0MzAxODNjZWU0ZWYzYjgzZWJkNSIsInVzZXJfaWQiOiIxIn0.ydwg4aXaS4p0H-OgWkzxIZQe0f0S5HY3NffHLmo7bvQ\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/logout/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "logout",
+                    ""
+                  ]
+                }
+              },
+              "status": "Reset Content",
+              "code": 205,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:25:19 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "37"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"detail\": \"Successfully logged out.\"\n}"
+            },
+            {
+              "name": "Error",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"refresh\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc3MzUwNTIzMSwiaWF0IjoxNzczNDE4ODMxLCJqdGkiOiI2YjQwYmM2NTNlY2Y0MzAxODNjZWU0ZWYzYjgzZWJkNSIsInVzZXJfaWQiOiIxIn0.ydwg4aXaS4p0H-OgWkzxIZQe0f0S5HY3NffHLmo7bvQ\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/logout/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "logout",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:25:49 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "227"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"InvalidToken\",\n    \"errors\": {\n        \"detail\": \"Given token not valid for any token type\",\n        \"code\": \"token_not_valid\",\n        \"messages\": [\n            {\n                \"token_class\": \"AccessToken\",\n                \"token_type\": \"access\",\n                \"message\": \"Token is expired\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "me",
+          "request": {
+            "method": "GET",
+            "header": []
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/me/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "me",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:12:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "129"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"email\": \"user.test@email.com\",\n    \"first_name\": \"\",\n    \"last_name\": \"\",\n    \"role\": \"CLIENT\",\n    \"date_joined\": \"2026-03-13T15:55:26.516407Z\"\n}"
+            },
+            {
+              "name": "Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/me/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "me",
+                    ""
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 16:26:04 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "WWW-Authenticate",
+                  "value": "Bearer realm=\"api\""
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "227"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"InvalidToken\",\n    \"errors\": {\n        \"detail\": \"Given token not valid for any token type\",\n        \"code\": \"token_not_valid\",\n        \"messages\": [\n            {\n                \"token_class\": \"AccessToken\",\n                \"token_type\": \"access\",\n                \"message\": \"Token is expired\"\n            }\n        ]\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Contracts",
+      "item": [
+        {
+          "name": "List Contracts",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{lawyer_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/contracts/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "List Contracts",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/contracts/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 17:58:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1545"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 3,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": \"b291fe08-736d-4aba-8ddd-37da24c77854\",\n            \"title\": \"Contract Creation\",\n            \"arabic_title\": \"إنشاء عقد\",\n            \"description\": \"Contract Creation\",\n            \"status\": \"ACTIVE\",\n            \"parties\": [\n                {\n                    \"id\": 2,\n                    \"email\": \"lasyer.test@email.com\",\n                    \"first_name\": \"\",\n                    \"last_name\": \"\",\n                    \"role\": \"LAWYER\"\n                }\n            ],\n            \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n            \"created_at\": \"2026-03-13T17:58:44.977716Z\",\n            \"updated_at\": \"2026-03-13T17:58:44.977727Z\",\n            \"deadline\": \"2026-03-13\",\n            \"document\": null,\n            \"is_expired\": false,\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"766de36d-9c47-4fa4-8608-c2e87db7adcd\",\n            \"title\": \"Contract Creation\",\n            \"arabic_title\": \"إنشاء عقد\",\n            \"description\": \"Contract Creation\",\n            \"status\": \"ACTIVE\",\n            \"parties\": [\n                {\n                    \"id\": 1,\n                    \"email\": \"user.test@email.com\",\n                    \"first_name\": \"\",\n                    \"last_name\": \"\",\n                    \"role\": \"CLIENT\"\n                },\n                {\n                    \"id\": 2,\n                    \"email\": \"lasyer.test@email.com\",\n                    \"first_name\": \"\",\n                    \"last_name\": \"\",\n                    \"role\": \"LAWYER\"\n                }\n            ],\n            \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n            \"created_at\": \"2026-03-13T17:37:01.293721Z\",\n            \"updated_at\": \"2026-03-13T17:37:01.293771Z\",\n            \"deadline\": \"2026-03-13\",\n            \"document\": null,\n            \"is_expired\": false,\n            \"deleted_at\": null\n        },\n        {\n            \"id\": \"74bcc6fd-e374-45da-8ae4-a470f32b80ea\",\n            \"title\": \"Contract Creation\",\n            \"arabic_title\": \"إنشاء عقد\",\n            \"description\": \"Contract Creation\",\n            \"status\": \"ACTIVE\",\n            \"parties\": [\n                {\n                    \"id\": 1,\n                    \"email\": \"user.test@email.com\",\n                    \"first_name\": \"\",\n                    \"last_name\": \"\",\n                    \"role\": \"CLIENT\"\n                }\n            ],\n            \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n            \"created_at\": \"2026-03-13T17:27:49.277472Z\",\n            \"updated_at\": \"2026-03-13T17:27:49.277484Z\",\n            \"deadline\": \"2026-03-13\",\n            \"document\": null,\n            \"is_expired\": false,\n            \"deleted_at\": null\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create Contract",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{user_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "title",
+                  "value": "Contract Creation",
+                  "type": "text",
+                  "uuid": "04363257-7734-440f-b40c-031376a2de49"
+                },
+                {
+                  "key": "description",
+                  "value": "Contract Creation",
+                  "type": "text",
+                  "uuid": "79a9a1cb-e139-4482-8cdf-1f670a97fe72"
+                },
+                {
+                  "key": "arabic_title",
+                  "value": "إنشاء عقد",
+                  "type": "text",
+                  "uuid": "832ada20-f486-4f07-827b-324e6928a47d"
+                },
+                {
+                  "key": "status",
+                  "value": "ACTIVE",
+                  "type": "text",
+                  "uuid": "f4de07e7-7367-4dfc-98e3-40cd65ea7306"
+                },
+                {
+                  "key": "parties",
+                  "value": "[1]",
+                  "type": "text",
+                  "uuid": "ef208dfa-66c5-4f27-9438-87d02665f014"
+                },
+                {
+                  "key": "deadline",
+                  "value": "2026-03-13",
+                  "type": "text",
+                  "uuid": "c4da5d35-ac07-447f-bbaa-367fb4551ede"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/contracts/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Permission Denied",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "Contract Creation",
+                      "type": "text",
+                      "uuid": "04363257-7734-440f-b40c-031376a2de49"
+                    },
+                    {
+                      "key": "description",
+                      "value": "Contract Creation",
+                      "type": "text",
+                      "uuid": "79a9a1cb-e139-4482-8cdf-1f670a97fe72"
+                    },
+                    {
+                      "key": "arabic_title",
+                      "value": "إنشاء عقد",
+                      "type": "text",
+                      "uuid": "832ada20-f486-4f07-827b-324e6928a47d"
+                    },
+                    {
+                      "key": "status",
+                      "value": "ACTIVE",
+                      "type": "text",
+                      "uuid": "f4de07e7-7367-4dfc-98e3-40cd65ea7306"
+                    },
+                    {
+                      "key": "parties",
+                      "value": "[1]",
+                      "type": "text",
+                      "uuid": "ef208dfa-66c5-4f27-9438-87d02665f014"
+                    },
+                    {
+                      "key": "deadline",
+                      "value": "2026-03-13",
+                      "type": "text",
+                      "uuid": "c4da5d35-ac07-447f-bbaa-367fb4551ede"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    ""
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 17:23:33 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "135"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"PermissionDenied\",\n    \"errors\": {\n        \"detail\": \"Only lawyers and administrators may create or modify contracts.\"\n    }\n}"
+            },
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\":\"Contract Creation\",\r\n    \"description\":\"Contract Creation\",\r\n    \"arabic_title\":\"إنشاء عقد\",\r\n    \"status\":\"ACTIVE\",\r\n    \"parties\":[2],\r\n    \"deadline\":\"2026-03-13\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    ""
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 17:58:44 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, POST, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "469"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"b291fe08-736d-4aba-8ddd-37da24c77854\",\n    \"title\": \"Contract Creation\",\n    \"arabic_title\": \"إنشاء عقد\",\n    \"description\": \"Contract Creation\",\n    \"status\": \"ACTIVE\",\n    \"parties\": [\n        {\n            \"id\": 2,\n            \"email\": \"lasyer.test@email.com\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"role\": \"LAWYER\"\n        }\n    ],\n    \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n    \"created_at\": \"2026-03-13T17:58:44.977716Z\",\n    \"updated_at\": \"2026-03-13T17:58:44.977727Z\",\n    \"deadline\": \"2026-03-13\",\n    \"document\": null,\n    \"is_expired\": false,\n    \"deleted_at\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Upload Document",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{lawyer_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "document",
+                  "type": "file",
+                  "uuid": "c6babd1e-9b16-4979-8d08-90c70f83153b",
+                  "src": "/C:/Users/Hamama-0988460297/Downloads/MIO Backend Technical Assessment.pdf"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/upload/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                "b291fe08-736d-4aba-8ddd-37da24c77854",
+                "upload",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Error trying to upload image",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "document",
+                      "type": "file",
+                      "uuid": "c6babd1e-9b16-4979-8d08-90c70f83153b",
+                      "src": "/C:/Users/Hamama-0988460297/Pictures/Screenshots/Screenshot (1).png"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/upload/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    "upload",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:01:23 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "179"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"ValidationError\",\n    \"errors\": {\n        \"document\": [\n            \"Only PDF and DOCX files are accepted. The uploaded file does not match either format's binary signature.\"\n        ]\n    }\n}"
+            },
+            {
+              "name": "Error trying to upload FAKE Docs",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "document",
+                      "type": "file",
+                      "uuid": "c6babd1e-9b16-4979-8d08-90c70f83153b",
+                      "src": "/C:/Users/Hamama-0988460297/Pictures/Screenshots/Screenshot (1).docx"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/upload/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    "upload",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:01:55 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "179"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"ValidationError\",\n    \"errors\": {\n        \"document\": [\n            \"Only PDF and DOCX files are accepted. The uploaded file does not match either format's binary signature.\"\n        ]\n    }\n}"
+            },
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "document",
+                      "type": "file",
+                      "uuid": "c6babd1e-9b16-4979-8d08-90c70f83153b",
+                      "src": "/C:/Users/Hamama-0988460297/Downloads/MIO Backend Technical Assessment.pdf"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/upload/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    "upload",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:02:25 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "POST, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "588"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"b291fe08-736d-4aba-8ddd-37da24c77854\",\n    \"title\": \"Contract Creation\",\n    \"arabic_title\": \"إنشاء عقد\",\n    \"description\": \"Contract Creation\",\n    \"status\": \"ACTIVE\",\n    \"parties\": [\n        {\n            \"id\": 2,\n            \"email\": \"lasyer.test@email.com\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"role\": \"LAWYER\"\n        }\n    ],\n    \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n    \"created_at\": \"2026-03-13T17:58:44.977716Z\",\n    \"updated_at\": \"2026-03-13T18:02:25.742707Z\",\n    \"deadline\": \"2026-03-13\",\n    \"document\": \"http://localhost:8000/media/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/documents/822b6aa1ff074ee6b7bf95d183c7f4ae.pdf\",\n    \"is_expired\": false,\n    \"deleted_at\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Retrieve",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{lawyer_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                "b291fe08-736d-4aba-8ddd-37da24c77854",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:03:22 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "588"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"b291fe08-736d-4aba-8ddd-37da24c77854\",\n    \"title\": \"Contract Creation\",\n    \"arabic_title\": \"إنشاء عقد\",\n    \"description\": \"Contract Creation\",\n    \"status\": \"ACTIVE\",\n    \"parties\": [\n        {\n            \"id\": 2,\n            \"email\": \"lasyer.test@email.com\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"role\": \"LAWYER\"\n        }\n    ],\n    \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n    \"created_at\": \"2026-03-13T17:58:44.977716Z\",\n    \"updated_at\": \"2026-03-13T18:02:25.742707Z\",\n    \"deadline\": \"2026-03-13\",\n    \"document\": \"http://localhost:8000/media/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/documents/822b6aa1ff074ee6b7bf95d183c7f4ae.pdf\",\n    \"is_expired\": false,\n    \"deleted_at\": null\n}"
+            },
+            {
+              "name": "User try to get Contract is not party of",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:03:47 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "99"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"Http404\",\n    \"errors\": {\n        \"detail\": \"No Contract matches the given query.\"\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update Contract",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{lawyer_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"title\":\"Contract Creation Updated\",\r\n    \"description\":\"Contract Creation Updated\",\r\n    \"arabic_title\":\"إنشاء عقد تعديل\",\r\n    \"status\":\"DRAFT\",\r\n    \"parties\":[1],\r\n    \"deadline\":\"2026-03-14\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/api/contracts/74bcc6fd-e374-45da-8ae4-a470f32b80ea/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                "74bcc6fd-e374-45da-8ae4-a470f32b80ea",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\":\"Contract Creation Updated\",\r\n    \"description\":\"Contract Creation Updated\",\r\n    \"arabic_title\":\"إنشاء عقد تعديل\",\r\n    \"status\":\"DRAFT\",\r\n    \"parties\":[1],\r\n    \"deadline\":\"2026-03-13\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:06:36 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "612"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": \"b291fe08-736d-4aba-8ddd-37da24c77854\",\n    \"title\": \"Contract Creation Updated\",\n    \"arabic_title\": \"إنشاء عقد تعديل\",\n    \"description\": \"Contract Creation Updated\",\n    \"status\": \"DRAFT\",\n    \"parties\": [\n        {\n            \"id\": 1,\n            \"email\": \"user.test@email.com\",\n            \"first_name\": \"\",\n            \"last_name\": \"\",\n            \"role\": \"CLIENT\"\n        }\n    ],\n    \"created_by\": \"lawyer.test@email.com (LAWYER)\",\n    \"created_at\": \"2026-03-13T17:58:44.977716Z\",\n    \"updated_at\": \"2026-03-13T18:06:36.664139Z\",\n    \"deadline\": \"2026-03-13\",\n    \"document\": \"http://localhost:8000/media/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/documents/822b6aa1ff074ee6b7bf95d183c7f4ae.pdf\",\n    \"is_expired\": false,\n    \"deleted_at\": null\n}"
+            },
+            {
+              "name": "Permission Denied",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"title\":\"Contract Creation Updated\",\r\n    \"description\":\"Contract Creation Updated\",\r\n    \"arabic_title\":\"إنشاء عقد تعديل\",\r\n    \"status\":\"ARCHIVED\",\r\n    \"parties\":[1],\r\n    \"deadline\":\"2026-03-13\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "b291fe08-736d-4aba-8ddd-37da24c77854",
+                    ""
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:06:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "125"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"ValidationError\",\n    \"errors\": {\n        \"status\": [\n            \"Only an ADMIN can set status to EXPIRED or ARCHIVED.\"\n        ]\n    }\n}"
+            }
+          ]
+        },
+        {
+          "name": "DELETE",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{lawyer_token}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/contracts/b291fe08-736d-4aba-8ddd-37da24c77854/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "contracts",
+                "b291fe08-736d-4aba-8ddd-37da24c77854",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Error",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/contracts/edcab814-2923-4d39-9e45-7b67e0e4ab63/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "contracts",
+                    "edcab814-2923-4d39-9e45-7b67e0e4ab63",
+                    ""
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 19:20:52 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "99"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"Http404\",\n    \"errors\": {\n        \"detail\": \"No Contract matches the given query.\"\n    }\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "item": [
+        {
+          "name": "List Notifications",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczNDQyNjU2LCJpYXQiOjE3NzM0MjQ2NTYsImp0aSI6IjQ2M2RkZjhmNTA1ODQ3ODc5NjBhN2EzOWU5MmU0YjA3IiwidXNlcl9pZCI6IjEifQ.zLKoylPrSnw6LPI8TiXOO0rQMWS2-EfmbEqGmySsRyo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/notifications/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/notifications/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "notifications",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:58:59 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "330"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 1,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"contract\": \"766de36d-9c47-4fa4-8608-c2e87db7adcd\",\n            \"contract_title\": \"Contract Creation\",\n            \"message\": \"Contract 'Contract Creation' is approaching its deadline on 2026-03-13. Please take action before the deadline.\",\n            \"is_read\": false,\n            \"created_at\": \"2026-03-13T18:58:16.720683Z\"\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Mark read",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczNDQyNjU2LCJpYXQiOjE3NzM0MjQ2NTYsImp0aSI6IjQ2M2RkZjhmNTA1ODQ3ODc5NjBhN2EzOWU5MmU0YjA3IiwidXNlcl9pZCI6IjEifQ.zLKoylPrSnw6LPI8TiXOO0rQMWS2-EfmbEqGmySsRyo",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/notifications/1/read/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "notifications",
+                "1",
+                "read",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Mark read",
+              "originalRequest": {
+                "method": "PATCH",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/notifications/1/read/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "notifications",
+                    "1",
+                    "read",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 18:59:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "PATCH, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "277"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"id\": 1,\n    \"contract\": \"766de36d-9c47-4fa4-8608-c2e87db7adcd\",\n    \"contract_title\": \"Contract Creation\",\n    \"message\": \"Contract 'Contract Creation' is approaching its deadline on 2026-03-13. Please take action before the deadline.\",\n    \"is_read\": true,\n    \"created_at\": \"2026-03-13T18:58:16.720683Z\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Audit",
+      "item": [
+        {
+          "name": "List Audits",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzczNDQ3MTM2LCJpYXQiOjE3NzM0MjkxMzYsImp0aSI6ImFhNzYwMjU4NjIwZjRmNzM5MzVmNjQ2MzlkMWExYzhlIiwidXNlcl9pZCI6IjQifQ.0fN8XXUluK9VrjtbTec2km_ZXgxy9J-nreoWNBiFv4o",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/api/audit/",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "api",
+                "audit",
+                ""
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Permission Denied",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/audit/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "audit",
+                    ""
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 19:10:58 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept, Cookie"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "117"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"success\": false,\n    \"error_type\": \"PermissionDenied\",\n    \"errors\": {\n        \"detail\": \"Only administrators may access this resource.\"\n    }\n}"
+            },
+            {
+              "name": "Success",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{url}}/api/audit/",
+                  "host": [
+                    "{{url}}"
+                  ],
+                  "path": [
+                    "api",
+                    "audit",
+                    ""
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Server",
+                  "value": "gunicorn"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 13 Mar 2026 19:22:57 GMT"
+                },
+                {
+                  "key": "Connection",
+                  "value": "close"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Vary",
+                  "value": "Accept"
+                },
+                {
+                  "key": "Allow",
+                  "value": "GET, HEAD, OPTIONS"
+                },
+                {
+                  "key": "X-Frame-Options",
+                  "value": "DENY"
+                },
+                {
+                  "key": "Content-Length",
+                  "value": "1548"
+                },
+                {
+                  "key": "X-Content-Type-Options",
+                  "value": "nosniff"
+                },
+                {
+                  "key": "Referrer-Policy",
+                  "value": "same-origin"
+                },
+                {
+                  "key": "Cross-Origin-Opener-Policy",
+                  "value": "same-origin"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"count\": 4,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 14,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"SOFT_DELETE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation Updated Audit\",\n            \"timestamp\": \"2026-03-13T19:22:53.920064Z\",\n            \"extra_data\": {\n                \"deleted_at\": \"2026-03-13 19:22:53.916962+00:00\"\n            }\n        },\n        {\n            \"id\": 13,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"UPDATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation Updated Audit\",\n            \"timestamp\": \"2026-03-13T19:22:48.000649Z\",\n            \"extra_data\": {\n                \"changed_fields\": {\n                    \"title\": {\n                        \"to\": \"Contract Creation Updated Audit\",\n                        \"from\": \"Contract Creation\"\n                    },\n                    \"status\": {\n                        \"to\": \"DRAFT\",\n                        \"from\": \"ACTIVE\"\n                    },\n                    \"deadline\": {\n                        \"to\": \"2026-03-19\",\n                        \"from\": \"2026-03-13\"\n                    },\n                    \"description\": {\n                        \"to\": \"Contract Creation Updated Audit\",\n                        \"from\": \"Contract Creation\"\n                    },\n                    \"arabic_title\": {\n                        \"to\": \"إنشاء عقد تعديل اشارة\",\n                        \"from\": \"إنشاء عقد\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": 12,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"UPDATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation\",\n            \"timestamp\": \"2026-03-13T19:22:40.071322Z\",\n            \"extra_data\": {\n                \"changed_fields\": {\n                    \"document\": {\n                        \"to\": \"contracts/ec5ac757-2a08-497f-85d5-1e998eda1ee3/documents/dd8b1ebe64394226ba2dd445ed0ae2ab.pdf\",\n                        \"from\": \"\"\n                    }\n                }\n            }\n        },\n        {\n            \"id\": 11,\n            \"user\": 3,\n            \"user_email\": \"lawyer.test@email.com\",\n            \"action\": \"CREATE\",\n            \"contract\": \"ec5ac757-2a08-497f-85d5-1e998eda1ee3\",\n            \"contract_title\": \"Contract Creation\",\n            \"timestamp\": \"2026-03-13T19:22:28.602836Z\",\n            \"extra_data\": {\n                \"status\": \"ACTIVE\",\n                \"deadline\": \"2026-03-13\"\n            }\n        }\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "user_token",
+      "value": ""
+    },
+    {
+      "key": "refresh_token",
+      "value": ""
+    },
+    {
+      "key": "lawyer_token",
+      "value": ""
+    }
+  ]
+}

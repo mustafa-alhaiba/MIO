@@ -42,3 +42,15 @@ Section 2 :
     Task 3: 
         1- Notifications: Async Alerts via Celery
         The `notifications` app powers asynchronous message delivery using Celery. It centralizes notification rules in a service class and triggers background tasks so the API stays responsive while emails/notifications are delivered in the background.
+    
+    Task 4: Audit Trail Implementation
+        The `audit` app provides comprehensive logging of all contract-related activities. Using Django signals, it automatically tracks changes to contracts and parties, storing detailed audit logs with timestamps, user actions, and before/after states. This ensures full traceability and compliance for legal documents.
+
+
+To run tests for the contracts app, use: `pytest apps/contracts/tests/ -v`
+
+To add admin user just run `python manage.py createsuperuser` and add credentials 
+
+we setup celerybeat schedular to use DB instead of file , we add command managment for that. 
+
+check postman folder for see the full apis with responses.
