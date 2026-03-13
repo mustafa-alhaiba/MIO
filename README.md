@@ -38,3 +38,7 @@ Section 2 :
 
         2- Architectural Decision: Service Layer for Business Logic Separation
         We implemented a service layer pattern to cleanly separate business logic from our views and serializers. This keeps our views thin and focused on request/response handling, while complex operations like contract creation, status transitions, and file attachments are encapsulated in dedicated service classes. This approach improves testability, reusability, and makes the codebase easier to maintain as the application grows.
+    
+    Task 3: 
+        1- Notifications: Async Alerts via Celery
+        The `notifications` app powers asynchronous message delivery using Celery. It centralizes notification rules in a service class and triggers background tasks so the API stays responsive while emails/notifications are delivered in the background.

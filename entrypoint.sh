@@ -12,6 +12,8 @@ if [[ "$1" == "gunicorn" ]]; then
     python manage.py migrate accounts --noinput #for not facing error when we migrate django default migrations files 0001_admin
     python manage.py migrate --noinput
 
+    python manage.py setup_beat_schedule
+    
     echo "Collecting static files..."
     python manage.py collectstatic --noinput
 fi

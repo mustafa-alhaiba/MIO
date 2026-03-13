@@ -11,10 +11,9 @@ class ContractQuerySet(models.QuerySet):
         return self.filter(deleted_at__isnull=False)
 
     def expiring_soon(self, days: int = 7):
-        today = date.today()
-        cutoff = date.today().replace(day=today.day + days)
         from datetime import timedelta
-        cutoff = date.today() + timedelta(days=days)
+        today = date.today()
+        cutoff = today + timedelta(days=days)
         return self.active().filter(
             status=contract_models.Contract.Status.ACTIVE,
             deadline__gte=today,

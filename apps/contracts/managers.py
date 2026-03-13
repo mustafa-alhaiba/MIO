@@ -7,3 +7,6 @@ class ContractManager(models.Manager):
 
     def all_with_deleted(self):
         return queryset.ContractQuerySet(self.model, using=self._db)
+
+    def expiring_soon(self, days: int = 7):
+        return self.get_queryset().expiring_soon(days=days)

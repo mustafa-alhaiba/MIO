@@ -48,7 +48,7 @@ services:
 
   celery_beat:
     <<: *app-base
-    command: celery -A config beat -l INFO
+    command: celery -A config beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler
 
 volumes:
   postgres_data:

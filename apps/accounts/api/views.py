@@ -6,6 +6,7 @@ from rest_framework_simplejwt import tokens
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.views import TokenObtainPairView
 from apps.accounts.api import serializers
+from apps.common.throttles import LoginRateThrottle
 from rest_framework_simplejwt import exceptions
 
 User = get_user_model()
@@ -23,7 +24,8 @@ class UserProfileView(generics.RetrieveAPIView):
         return self.request.user
 
 class CustomTokenObtainPairView(TokenObtainPairView):
-   serializer_class = serializers.CustomTokenObtainPairSerializer
+    serializer_class = serializers.CustomTokenObtainPairSerializer
+    throttle_classes = [LoginRateThrottle]
 
 class LogoutView(APIView):
     permission_classes = [permissions.IsAuthenticated]
