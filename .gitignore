@@ -3,3 +3,5 @@
 *celerybeat-schedule
 *staticfiles
 *gunicorn.ctl
+*__pycache__
+*.pyc

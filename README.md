@@ -28,3 +28,7 @@ Section 1 :
 
     hint : to add new app to the project create folder with the <app_name> ,then in Docker Application or Termminal run python manage.py startapp <app_name> apps/<app_name> , change the apps.py to add the name as : "apps.<app_name>"
 
+Section 2 :
+    Task 1 : 
+        1- Architectural Decision: Custom User Model
+        I opted to use `AbstractBaseUser` rather than `AbstractUser`. Modern APIs and legal tech platforms universally use email addresses for authentication. `AbstractUser` forces the inclusion of a `username` field, which requires awkward workarounds to remove or bypass. `AbstractBaseUser` provides a clean, secure slate, allowing `email` to be the true `USERNAME_FIELD` while keeping the database schema lean.

@@ -9,6 +9,7 @@ echo "PostgreSQL started successfully."
 
 if [[ "$1" == "gunicorn" ]]; then
     echo "Applying database migrations..."
+    python manage.py migrate accounts --noinput #for not facing error when we migrate django default migrations files 0001_admin
     python manage.py migrate --noinput
 
     echo "Collecting static files..."

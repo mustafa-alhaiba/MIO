@@ -45,6 +45,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
+THIRDS_PARTY_APPS = [
+    "rest_framework",
+    "rest_framework_simplejwt",
+    "rest_framework_simplejwt.token_blacklist",
+]
+
 APPS = [
     "apps.accounts",
     "apps.contracts",
@@ -52,7 +58,8 @@ APPS = [
     "apps.audit"
 ]
 
-INSTALLED_APPS += APPS
+INSTALLED_APPS += APPS 
+INSTALLED_APPS += THIRDS_PARTY_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -123,7 +130,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+    'EXCEPTION_HANDLER': 'apps.common.exception_handler.custom_exception_handler',
+}
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
@@ -149,3 +164,4 @@ MEDIA_ROOT = BASE_DIR / "media"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+AUTH_USER_MODEL = "accounts.User"
